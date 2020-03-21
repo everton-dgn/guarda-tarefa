@@ -1,0 +1,377 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    height: 100%;
+    min-height: 100vh;
+    background: #00020e;
+    padding: 20px 0;
+    transition: all .3s linear;
+}
+
+h3 {
+    letter-spacing: 2px;
+}
+
+.light {
+    background: #e0f7ff !important;
+    color: #002a54 !important;
+}
+
+.lightModaBackground {
+    background: #e0f7ff !important;
+    color: #002a54 !important;
+    box-shadow: 0 0 0 2px #002a54, 0 0 0 4px #fff !important
+}
+
+.lightBorder {
+    border-color: #002a54 !important;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #002a54 !important;
+    background: #fff !important;
+}
+
+.lightBorderCronometro {
+    box-shadow: 0 0 0 3px #fff, 0 0 0 7px #002a54 !important;
+    background: #fff !important;
+    border-color: #002a54 !important;
+    color: #002a54 !important;
+}
+
+.lightBorderTop {
+    border-color: #002a54 !important;
+    color: #002a54 !important;
+}
+
+.lightPonto {
+    background: transparent;
+    color: #002a54 !important;
+}
+
+.lightBorderModal {
+    border-color: #002a54 !important;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #002a54 !important;
+}
+
+h2.lightBorderTop {
+    font-weight: bold!important;
+}
+
+.botao {
+    display: flex;
+    width: 100%;
+    margin-bottom: 60px;
+    justify-content: center;
+}
+
+.liga-desliga__checkbox {
+    position: absolute;
+    left: -9999px;
+}
+
+.liga-desliga__botao {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    cursor: pointer;
+}
+
+.liga-desliga__botao::before,
+.liga-desliga__botao::after {
+    content: "";
+    box-shadow: 0 0 0 1px #CCC;
+    transition: all 0.2s ease;
+}
+
+#mudar-cor:checked+.liga-desliga__botao::before,
+#mudar-cor:checked+.liga-desliga__botao::after {
+    box-shadow: 0 0 0 1px #002a54;
+}
+
+.liga-desliga__botao::before {
+    display: inline-block;
+    border-radius: 1em;
+    height: 16px;
+    width: 31px;
+    background: #900;
+}
+
+.liga-desliga__botao::after {
+    position: absolute;
+    top: 0.025em;
+    left: 0.025em;
+    width: 0.95em;
+    height: 0.95em;
+    border-radius: 100%;
+    background: #FFF;
+}
+
+.liga-desliga__checkbox:checked+.liga-desliga__botao::before {
+    background: #55D069;
+}
+
+.liga-desliga__checkbox:checked+.liga-desliga__botao::after {
+    left: 1.025em;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Orbitron', sans-serif;
+    color: #0ff;
+    max-width: 550px;
+}
+
+.cronometro {
+    min-width: 510px;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 4px;
+    border: 1px solid #fff;
+    padding: 0 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 0 3px #00020e, 0 0 0 7px #4ad2f1;
+    font-size: 5rem;
+    transition: all .3s linear;
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 58px;
+}
+
+#ponto {
+    color: #fff;
+    background: transparent;
+}
+
+#segundos,
+#minutos,
+#horas {
+    min-width: 141px;
+    text-align: center;
+}
+
+#voltas,
+#salvarTarefa {
+    font-size: 2.2rem;
+    margin-top: 15px;
+    text-align: center;
+    overflow-y: auto;
+    max-height: 30vh;
+}
+
+#voltas div,
+#salvarTarefa div div {
+    border-top: 1px solid #fff;
+}
+
+#voltas::-webkit-scrollbar,
+#salvarTarefa::-webkit-scrollbar {
+    width: 8px;
+}
+
+#voltas::-webkit-scrollbar-thumb,
+#salvarTarefa::-webkit-scrollbar-thumb {
+    background: #00020e;
+    border: 1px solid #fff;
+    border-radius: 6px;
+}
+
+.barra::-webkit-scrollbar-thumb {
+    background: #002a54 !important;
+}
+
+span {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.botoes button .fa {
+    font-size: 3rem;
+}
+
+button {
+    background: transparent;
+    color: #0ff;
+    border: 1px solid #fff;
+    padding: 6px 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 0 2px #00020e, 0 0 0 4px #4ad2f1;
+    transition: all .3s linear;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.15);
+}
+
+#modal button,
+#modalTarefas button {
+    box-shadow: 0 0 0 3px #00020e, 0 0 0 4px #0ff;
+}
+
+#containerModal,
+#containerModalTarefas {
+    display: none;
+    background: #000000ad;
+    width: 100%;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal,
+#modalTarefas {
+    background: #00020e;
+    display: flex;
+    padding: 40px 20px;
+    box-shadow: 0 0 0 1px #fff;
+    border-radius: 4px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 20px;
+    max-width: 550px;
+}
+
+#modalTarefas h2,
+#modal h2 {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Verdana', Arial, Helvetica, sans-serif;
+    width: 100%;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    text-align: center;
+    border: 1px solid #00f6f7;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#modalTarefas button {
+    margin: 10px 6px;
+}
+
+input {
+    padding: 10px 5px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    border: 2px solid #00020e;
+    width: 100%;
+    box-shadow: 0 0 0 1px #0ff;
+    font-family: 'Verdana', Arial, Helvetica, sans-serif;
+}
+
+input::placeholder {
+    font-style: italic;
+    color: #ccc;
+    font-family: 'Verdana', Arial, Helvetica, sans-serif;
+}
+
+.mostrar {
+    display: flex !important;
+}
+
+.animarModal {
+    animation: modal .5s forwards;
+}
+
+.tituloDaTarefa {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 5px 0;
+    color: #fff;
+}
+
+.numeroVolta {
+    float: left;
+    line-height: 44px;
+    color: #fff;
+}
+
+footer {
+    color: #fff;
+    bottom: 0px;
+    margin-top: 60px;
+    font-family: 'Orbitron', sans-serif;
+    padding: 0 20px;
+    letter-spacing: 2px;
+    font-size: .7rem;
+    text-align: center;
+}
+
+footer a {
+    color: #0ff;
+    display: inline-flex;
+    line-height: 2;
+}
+
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -30px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .botoes button .fa {
+        font-size: 1.2rem;
+    }
+
+    .cronometro {
+        min-width: auto;
+        font-size: 2.5rem;
+    }
+
+    #segundos,
+    #minutos,
+    #horas {
+        min-width: 75px;
+    }
+
+    #voltas,
+    #salvarTarefa {
+        font-size: 1rem;
+    }
+
+    span {
+        font-size: 0.8rem;
+    }
+
+    .tituloDaTarefa {
+        font-size: .8rem;
+        letter-spacing: 1px;
+    }
+
+    .container {
+        max-width: 293px;
+    }
+
+    .numeroVolta {
+        line-height: 20px;
+    }
+
+}

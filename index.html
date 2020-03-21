@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cronômetro</title>
+
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Orbitron:400,500,600,700,800,900&display=swap"
+            rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link href="style.css" rel="stylesheet">
+    </head>
+
+<body>
+
+    <div class="container">
+
+        <div class="botao">
+            <input type="checkbox" id="mudar-cor" class="liga-desliga__checkbox">
+            <label for="mudar-cor" class="liga-desliga__botao"></label>
+        </div>
+
+        <div class="botoes">
+            <button id="iniciar" title="Clique para iniciar"><i class="fa fa-play" aria-hidden="true"></i></button>
+            <button id="pausar" title="Clique para pausar"><i class="fa fa-pause" aria-hidden="true"></i></button>
+            <button id="resetar" title="Clique uma vez para limpar o tempo e clique duas vezes para limpar as voltas"><i
+                    class="fa fa-trash" aria-hidden="true"></i></button>
+            <button id="guardarVoltas" title="Clique uma vez para armazenar uma volta"><i class="fa fa-refresh"
+                    aria-hidden="true"></i></button>
+            <button id="salvar"><i class="fa fa-save" aria-hidden="true"></i></button>
+        </div>
+
+        <div class="cronometro">
+            <div id="horas">00</div>
+            <div id="ponto">:</div>
+            <div id="minutos">00</div>
+            <div id="ponto">:</div>
+            <div id="segundos">00</div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <h3>TAREFAS: <span class="contador"></span></h3>
+        <div id="salvarTarefa"></div>
+
+        <br>
+        <br>
+        <h3>VOLTAS: <span class="contadorVoltas"></span></h3>
+        <div id="voltas"></div>
+
+    </div>
+
+    <footer>Desenvolvido por <a href="https://querocriarsite.com" target="BLANK">Éverton Toffanetto</a></footer>
+
+    <div id="containerModal">
+        <form id="modal">
+
+            <h2>
+                AVISO: Tarefas salvas com nomes exatamente iguais (letra maiúscula diferenciam os nomes) sobreescrevem
+                umas as outras!
+            </h2>
+
+            <input type="text" id="input" placeholder="Digite um nome..." minlength="1">
+
+            <button type="submit" id="ok" title="Salvar tarefa">
+                <i class="fa fa-save" aria-hidden="true"></i> Salvar
+            </button>
+
+            <button id="cancelar" title="Cancelar criação de tarefa">
+                <i class="fa fa-ban" aria-hidden="true"></i> Cancelar
+            </button>
+
+        </form>
+    </div>
+
+    <div id="containerModalTarefas">
+        <div id="modalTarefas">
+
+            <h2>
+                Escolha o que deseja fazer:
+            </h2>
+
+            <button id="continuarTarefa" title="Continuar tarefa de onde parou">
+                <i class="fa fa-play" aria-hidden="true"></i> Continuar
+            </button>
+
+            <button id="apagarTarefa" title="Apagar tarefa">
+                <i class="fa fa-trash" aria-hidden="true"></i> Apagar
+            </button>
+
+            <button id="cancelar2" title="Cancelar alterações">
+                <i class="fa fa-ban" aria-hidden="true"></i> Cancelar
+            </button>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
