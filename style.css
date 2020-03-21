@@ -65,7 +65,7 @@ h3 {
 }
 
 h2.lightBorderTop {
-    font-weight: bold!important;
+    font-weight: bold !important;
 }
 
 .botao {
@@ -128,7 +128,7 @@ h2.lightBorderTop {
 .container {
     display: flex;
     flex-direction: column;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Orbitron', Arial, Helvetica, sans-serif;
     color: #0ff;
     max-width: 550px;
 }
@@ -311,7 +311,7 @@ footer {
     color: #fff;
     bottom: 0px;
     margin-top: 60px;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Orbitron', Arial, Helvetica, sans-serif;
     padding: 0 20px;
     letter-spacing: 2px;
     font-size: .7rem;
@@ -325,7 +325,7 @@ footer a {
 }
 
 footer.lightBorderTop {
-    font-weight: 700!important;
+    font-weight: 700 !important;
 }
 
 @keyframes modal {
