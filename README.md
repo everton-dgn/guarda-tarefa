@@ -13,15 +13,20 @@
 ## Instruções:
 
 1 - Para zerar o cronômetro basta clicar uma vezes no icone da lixeira.
+
 2 - Para apagar as voltas registradas basta apenas clicar duas vezes no icone da lixeira.
+
 3 - Para salvar o tempo registrado como uma tarefa clique no ícone de salvar (preferencialmente defina um nome) e clique em guardar.
+
 4 - Para apagar uma tarefa clique encima dela e depois no modal que aparecer clique em apagar.
+
 5 - Para começar o cronômetro a partir do tempo registrado de uma tarefa clique encima dela e depois no modal que aparecer clique em continuar. Em seguida inicie o cronômetro.
+
 6 - Para acrescentar mais tempo em uma tarefa específica, inicie o cronômetro como descrito anteriormente a partir de uma tarefa previamente salva. Após terminar o tempo desejado, salve-o com o mesmo nome da tarefa que deseja sobrescrever.
 
 ### ⚠ Aviso: Tarefas salvas com nome iguais se sobreescrevem. Letras maiúsculas podem ser usadas para diferenciar o nome.
 
-- [ ] Obs: Por enquanto, o cronômetro marca até 99 horas, pausando quando atinge este valor. Futuramente, serão acrescentados dias.
+- <b>Obs:</b> Por enquanto, o cronômetro marca até 99 horas, pausando quando atinge este valor. Futuramente, serão acrescentados dias.
 
 ## Imagens do Projeto:
 
