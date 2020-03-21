@@ -176,6 +176,7 @@ h2.lightBorderTop {
 #voltas div,
 #salvarTarefa div div {
     border-top: 1px solid #fff;
+    padding: 6px 0;
 }
 
 #voltas::-webkit-scrollbar,
