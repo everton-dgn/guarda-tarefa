@@ -98,7 +98,7 @@ function mudarCor() {
     document.body.classList.toggle('light');
     $$('button').forEach(butao => butao.classList.toggle('light'));
     $$('button').forEach(butao => butao.classList.toggle('lightBorder'));
-    $$('#voltas div, .contador, h3, #salvarTarefa').forEach(borda => borda.classList.toggle('lightBorderTop'));
+    $$('#voltas div, .contador, h3, #salvarTarefa, footer, footer a').forEach(borda => borda.classList.toggle('lightBorderTop'));
     $$('#ponto').forEach(item => item.classList.toggle('lightPonto'));
     $('.cronometro').classList.toggle('lightBorderCronometro');
     $('#voltas').classList.toggle('barra');

@@ -323,6 +323,10 @@ footer a {
     line-height: 2;
 }
 
+footer.lightBorderTop {
+    font-weight: 700!important;
+}
+
 @keyframes modal {
     from {
         opacity: 0;
