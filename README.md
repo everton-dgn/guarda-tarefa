@@ -1,3 +1,6 @@
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
 # Cronômetro e Guarda Tarefas
 
 ### Feito com javascript, html e css para fins de estudo.
@@ -16,6 +19,8 @@
 
 - [x] Continua marcando o tempo mesmo com navegador minimizado.
 
+- [x] As tarefas são organizadas automaticamente em ordem alfabética.
+
 - [x] Foi desenvolvido para compatibilidade máxima com o navegador Google Chrome, podendo funcionar ou não em outros navegadores.
 
 - [x] Possui responsividade em praticamente qualquer rersolução de tela, desktop ou mobile.
@@ -32,15 +37,15 @@ Clicar duas vezes no icone da lixeira.
 
 <b>3 - Salvar o tempo registrado como uma tarefa (com um nome ou não):</b>
 
-Clique no ícone de salvar (preferencialmente defina um nome) e clique em <b>Guardar</b>.
+Clique no ícone de salvar (preferencialmente defina um nome) e clique em <b><i class="fa fa-save" aria-hidden="true"></i> Guardar</b>.
 
 <b>4 - Apagar uma tarefa:</b>
 
-Clique encima da tarefa e depois no modal que aparecer clique em <b>Apagar</b>.
+Clique encima da tarefa e depois no modal que aparecer clique em <b><i class="fa fa-trash" aria-hidden="true"></i> Apagar</b>.
 
-<b>5 - Iniciar o cronômetro a partir do tempo registrado em uma tarefa:
+<b>5 - Iniciar o cronômetro a partir do tempo registrado em uma tarefa:</b>
 
-Clique encima do nome ou tempo da tarefa e depois no modal que aparecer clique em <b>Continuar</b>. Em seguida inicie o cronômetro.
+Clique encima do nome ou tempo da tarefa e depois no modal que aparecer clique em <b><i class="fa fa-play" aria-hidden="true"></i> Continuar</b>. Em seguida inicie o cronômetro.
 
 <b>6 - Para acrescentar mais tempo em uma tarefa específica:</b>
 
