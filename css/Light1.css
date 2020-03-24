@@ -1,0 +1,125 @@
+:root {
+    --cor-escuro: #e8edef;
+    --cor-medio: #947648;
+    --cor-claro: #002a54;
+    --cor-branco: #fff;
+}
+
+body,
+.barra::-webkit-scrollbar-thumb {
+    background: var(--cor-escuro);
+}
+
+nav {
+    border-bottom: 1px solid var(--cor-claro);
+    background: #ffffffe3;
+}
+
+[data-tema] {
+    font-weight: 500;
+}
+
+[data-tema],
+#ponto,
+span,
+.tituloDaTarefa,
+.numeroVolta {
+    color: var(--cor-medio);
+}
+
+[data-tema] ul {
+    background: var(--cor-branco);
+    border: 1px solid var(--cor-claro);
+}
+
+[data-tema] ul li {
+    border-top: 1px solid var(--cor-claro);
+    color: var(--cor-claro);
+    font-weight: 600;
+}
+
+[data-tema] ul li:hover {
+    background: var(--cor-claro);
+    color: var(--cor-escuro);
+}
+
+[data-tema] span,
+.container {
+    color: var(--cor-claro);
+}
+
+.cronometro {
+    background: var(--cor-branco);
+    border: 1px solid var(--cor-medio);
+    box-shadow: 0 0 0 3px var(--cor-branco), 0 0 0 7px var(--cor-medio);
+}
+
+#voltas div,
+#salvarTarefa div div {
+    border-top: 1px solid var(--cor-claro);
+}
+
+#voltas::-webkit-scrollbar-thumb,
+#salvarTarefa::-webkit-scrollbar-thumb {
+    background: var(--cor-medio);
+    border: 1px solid var(--cor-medio);
+}
+
+#voltas::-webkit-scrollbar,
+#salvarTarefa::-webkit-scrollbar {
+    width: 6px !important;
+}
+
+button {
+    background: var(--cor-branco) !important;
+    color: var(--cor-claro);
+    border: 1px solid var(--cor-medio);
+    box-shadow: 0 0 0 2px var(--cor-branco), 0 0 0 4px var(--cor-medio);
+}
+
+#modal button,
+#modalTarefas button {
+    color: var(--cor-claro);
+    border-color: var(--cor-medio);
+    box-shadow: 0 0 0 3px var(--cor-branco), 0 0 0 5px var(--cor-claro);
+}
+
+#containerModal,
+#containerModalTarefas {
+    background: #0c1113e8;
+}
+
+#modal,
+#modalTarefas {
+    background: var(--cor-escuro);
+    box-shadow: 0 0 0 2px var(--cor-medio);
+}
+
+#modalTarefas h2,
+#modal h2 {
+    color: var(--cor-claro);
+    border: 2px solid var(--cor-medio);
+    background: var(--cor-branco);
+}
+
+input {
+    border: 2px solid var(--cor-claro);
+}
+
+input::placeholder {
+    color: #ccc;
+}
+
+footer {
+    color: var(--cor-claro);
+    font-weight: 600;
+}
+
+footer div a {
+    color: var(--cor-medio);
+}
+
+footer a span {
+    background: url('..//images/logolight.svg') no-repeat center center !important;
+    background-size: contain !important;
+}

@@ -1,0 +1,108 @@
+:root {
+    --cor-escuro: #0a1021;
+    --cor-medio: #AB987A;
+    --cor-claro: #ff4e38;
+    --cor-branco: #cbc9d0;
+}
+
+body {
+    background: var(--cor-escuro);
+}
+
+nav {
+    border-bottom: 1px solid var(--cor-branco);
+    background: #0a1021e6;
+}
+
+[data-tema],
+#ponto,
+span,
+.tituloDaTarefa,
+.numeroVolta,
+footer {
+    color: var(--cor-branco);
+}
+
+[data-tema] ul {
+    background: var(--cor-escuro);
+    border: 1px solid var(--cor-branco);
+}
+
+[data-tema] ul li {
+    border-top: 1px solid var(--cor-branco);
+    color: var(--cor-claro);
+}
+
+[data-tema] ul li:hover {
+    background: var(--cor-claro);
+    color: var(--cor-escuro);
+}
+
+[data-tema] span,
+.container,
+footer div a {
+    color: var(--cor-claro);
+}
+
+.cronometro {
+    border: 1px solid var(--cor-branco);
+    box-shadow: 0 0 0 3px var(--cor-escuro), 0 0 0 7px var(--cor-medio);
+}
+
+#voltas div,
+#salvarTarefa div div {
+    border-top: 1px solid var(--cor-branco);
+}
+
+#voltas::-webkit-scrollbar-thumb,
+#salvarTarefa::-webkit-scrollbar-thumb {
+    background: var(--cor-escuro);
+    border: 1px solid var(--cor-medio);
+}
+
+button {
+    color: var(--cor-claro);
+    border: 1px solid var(--cor-branco);
+    box-shadow: 0 0 0 2px var(--cor-escuro), 0 0 0 4px var(--cor-medio);
+}
+
+#modal button,
+#modalTarefas button {
+    color: var(--cor-branco);
+    border-color: var(--cor-medio);
+    box-shadow: 0 0 0 3px var(--cor-escuro), 0 0 0 4px var(--cor-claro);
+}
+
+#containerModal,
+#containerModalTarefas {
+    background: #030710e6;
+}
+
+#modal,
+#modalTarefas {
+    background: var(--cor-escuro);
+    box-shadow: 0 0 0 1px var(--cor-branco);
+}
+
+#modalTarefas h2,
+#modal h2 {
+    color: var(--cor-branco);
+    border: 1px solid var(--cor-medio);
+}
+
+input {
+    border: 2px solid var(--cor-escuro);
+    box-shadow: 0 0 0 1px var(--cor-claro);
+}
+
+input::placeholder {
+    color: #ccc;
+}
+
+footer a span {
+    filter: sepia(1);
+}
+
+footer a span {
+    filter: invert(.8);
+}

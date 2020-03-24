@@ -8,30 +8,58 @@
     <title>Cronômetro</title>
 
     <head>
+        <link href="css/Dark1.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Orbitron:400,500,600,700,800,900&display=swap"
             rel="stylesheet">
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
             integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-        <link href="style.css" rel="stylesheet">
+        <link rel="shortcut icon" href="images/favicon.ico">
     </head>
 
 <body>
 
+    <nav>
+        <div data-tema>Tema: <span>Dark1</span> <i class="fa fa-caret-down"></i>
+            <ul>
+                <li data-dark1>Dark1</li>
+                <li data-dark2>Dark2</li>
+                <li data-dark3>Dark3</li>
+                <li data-dark4>Dark4</li>
+                <li data-dark5>Dark5</li>
+                <li data-light1>Light1</li>
+                <li data-light2>Light2</li>
+                <li data-light3>Light3</li>
+                <li data-light4>Light4</li>
+                <li data-light5>Light5</li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container">
 
-        <div class="botao">
-            <input type="checkbox" id="mudar-cor" class="liga-desliga__checkbox">
-            <label for="mudar-cor" class="liga-desliga__botao"></label>
-        </div>
-
         <div class="botoes">
-            <button id="iniciar" title="Clique para iniciar"><i class="fa fa-play" aria-hidden="true"></i></button>
-            <button id="pausar" title="Clique para pausar"><i class="fa fa-pause" aria-hidden="true"></i></button>
-            <button id="resetar" title="Clique uma vez para limpar o tempo e clique duas vezes para limpar as voltas"><i
-                    class="fa fa-trash" aria-hidden="true"></i></button>
-            <button id="guardarVoltas" title="Clique uma vez para armazenar uma volta"><i class="fa fa-refresh"
-                    aria-hidden="true"></i></button>
-            <button id="salvar"><i class="fa fa-save" aria-hidden="true"></i></button>
+
+            <button id="iniciar" title="Clique para iniciar">
+                <i class="fa fa-play" aria-hidden="true"></i>
+            </button>
+
+            <button id="pausar" title="Clique para pausar">
+                <i class="fa fa-pause" aria-hidden="true"></i>
+            </button>
+
+            <button id="resetar" title="Clique uma vez para limpar o tempo e clique duas vezes para limpar as voltas">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+            </button>
+
+            <button id="guardarVoltas" title="Clique uma vez para armazenar uma volta">
+                <i class="fa fa-refresh" aria-hidden="true"></i>
+            </button>
+
+            <button id="salvar">
+                <i class="fa fa-save" aria-hidden="true"></i>
+            </button>
+
         </div>
 
         <div class="cronometro">
@@ -55,7 +83,14 @@
 
     </div>
 
-    <footer>Desenvolvido por <a href="https://querocriarsite.com" target="BLANK">Éverton Toffanetto</a></footer>
+    <footer>
+        <div>Desenvolvido por</div>
+        <div>
+            <a href="https://querocriarsite.com" title="www.querocriarsite.com" target="BLANK">
+                <span></span>Éverton Toffanetto
+            </a>
+        </div>
+    </footer>
 
     <div id="containerModal">
         <form id="modal">

@@ -24,6 +24,63 @@ h3 {
     letter-spacing: 2px;
 }
 
+nav {
+    display: flex;
+    height: 52px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+}
+
+[data-tema] span {
+    font-size: 15px;
+}
+
+[data-tema] {
+    right: 0;
+    position: absolute;
+    line-height: 50px;
+    padding: 0 20px;
+    font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    margin-right: 20px;
+}
+
+[data-tema] ul {
+    display: none;
+    animation: menu-tema .5s forwards;
+    position: absolute;
+    border-top: none;
+    border-radius: 0 0 3px 3px;
+}
+
+@keyframes menu-tema {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -10px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+[data-tema]:hover ul {
+    display: block;
+}
+
+[data-tema] ul li {
+    line-height: 2.3;
+    font-size: 14px;
+    padding: 0 36px;
+}
+
+[data-tema] ul li:hover {
+font-weight: 600;
+}
+
 .botao {
     display: flex;
     width: 100%;
@@ -36,6 +93,7 @@ h3 {
     flex-direction: column;
     font-family: 'Orbitron', Arial, Helvetica, sans-serif;
     max-width: 550px;
+    margin-top: 80px;
 }
 
 .cronometro {
@@ -89,6 +147,7 @@ h3 {
 #salvarTarefa::-webkit-scrollbar-thumb {
     border-radius: 6px;
 }
+
 
 span {
     font-size: 1.2rem;
@@ -151,6 +210,12 @@ button:hover {
     margin: 10px 6px;
 }
 
+#modal button, #modalTarefas button {
+    font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
 input {
     padding: 10px 5px;
     margin-bottom: 40px;
@@ -165,7 +230,7 @@ input::placeholder {
 }
 
 .mostrar {
-    display: flex;
+    display: flex!important;
 }
 
 .animarModal {
@@ -206,15 +271,10 @@ footer div {
 
 footer a span {
     width: 30px;
-    background: url('../images/logodark.svg') no-repeat center center;
+    background: url('..//images/logodark.svg') no-repeat center center;
     background-size: contain;
     margin: 0 10px 0 5px;
 }
-
-/* footer a span.lightBorderTop {
-    background: url('..//images/logolight.svg') no-repeat center center!important;
-    background-size: contain!important;
-} */
 
 @keyframes modal {
     from {
@@ -229,6 +289,11 @@ footer a span {
 }
 
 @media screen and (max-width: 600px) {
+
+    [data-tema] {
+        margin-right: 0;
+        padding: 0 15px;
+    }
 
     .botoes button .fa {
         font-size: 1.2rem;

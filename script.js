@@ -50,18 +50,9 @@ function cronometro() {
     if (m == 60) {
         h++; s = 0; m = 0;
     }
-    if (h < 10)
-        $("#horas").innerHTML = "0" + h;
-    else
-        $("#horas").innerHTML = h;
-    if (s < 10)
-        $("#segundos").innerHTML = "0" + s;
-    else
-        $("#segundos").innerHTML = s;
-    if (m < 10)
-        $("#minutos").innerHTML = "0" + m;
-    else
-        $("#minutos").innerHTML = m;
+    h < 10 ? $("#horas").innerHTML = "0" + h : $("#horas").innerHTML = h;
+    s < 10 ? $("#segundos").innerHTML = "0" + s : $("#segundos").innerHTML = s;
+    m < 10 ? $("#minutos").innerHTML = "0" + m : $("#minutos").innerHTML = m;
     if (h == 99)
         pausarTempo();
     s++;
@@ -92,33 +83,6 @@ resetar.addEventListener("click", () => {
     }
 });
 
-// ativa modo light:
-const botao = $('.liga-desliga__botao');
-function mudarCor() {
-    document.body.classList.toggle('light');
-    $$('button').forEach(butao => butao.classList.toggle('light'));
-    $$('button').forEach(butao => butao.classList.toggle('lightBorder'));
-    $$('#voltas div, .contador, h3, #salvarTarefa, footer, footer a').forEach(borda => borda.classList.toggle('lightBorderTop'));
-    $$('#ponto').forEach(item => item.classList.toggle('lightPonto'));
-    $('.cronometro').classList.toggle('lightBorderCronometro');
-    $('#voltas').classList.toggle('barra');
-}
-botao.addEventListener('click', mudarCor);
-
-// salva modo light localStorage:
-$('#mudar-cor').addEventListener('click', save);
-function save() {
-    const checkbox = $('#mudar-cor');
-    localStorage.setItem("checkbox1", checkbox.checked);
-}
-
-const checado = JSON.parse(localStorage.getItem("checkbox1"));
-$('#mudar-cor').checked = checado;
-
-if (!!checado) {
-    mudarCor();
-}
-
 // salvar time e voltas no localStorage:
 pausar.addEventListener('click', salvarTempo);
 function salvarTempo() {
@@ -128,7 +92,6 @@ function salvarTempo() {
 }
 
 guardarVoltas.addEventListener('click', salvarVoltas);
-botao.addEventListener('click', salvarVoltas);
 function salvarVoltas() {
     localStorage.setItem('voltas', voltas.innerHTML);
     location.reload();
@@ -142,29 +105,20 @@ function apagarTempo() {
 }
 
 window.onload = function () {
-    if (localStorage.getItem('segundos') < 10) {
-        s = +localStorage.getItem('segundos');
-        $('#segundos').innerText = '0' + s;
-    } else {
-        s = +localStorage.getItem('segundos');
-        $('#segundos').innerText = s;
+
+    // retorna e trata o tempo armazenado no localStorage para escrevê-lo no cronômetro:
+    function getLocalStorageTime(unit) {
+
+        const time = +localStorage.getItem(unit);
+
+        $('#' + unit).innerText = time < 10 ? '0' + time : time;
+
+        return time;
     }
 
-    if (localStorage.getItem('minutos') < 10) {
-        m = +localStorage.getItem('minutos');
-        $('#minutos').innerText = '0' + m;
-    } else {
-        m = +localStorage.getItem('minutos');
-        $('#minutos').innerText = m;
-    }
-
-    if (localStorage.getItem('horas') < 10) {
-        h = +localStorage.getItem('horas');
-        $('#horas').innerText = '0' + h;
-    } else {
-        h = +localStorage.getItem('horas');
-        $('#horas').innerText = h;
-    }
+    s = getLocalStorageTime('segundos');
+    m = getLocalStorageTime('minutos');
+    h = getLocalStorageTime('horas');
 
     $('#voltas').innerHTML = localStorage.getItem('voltas');
 
@@ -201,20 +155,6 @@ window.onload = function () {
 
         $('#containerModalTarefas').classList.add('mostrar');
         $('#modalTarefas').classList.add('animarModal');
-    }
-
-    // complemento cor modo light:
-    if ($('.light')) {
-        $$('.numeroVolta, span, .contadorVoltas, .tituloDaTarefa, .timerDaTarefa').forEach(contador => contador.classList.add('lightBorderTop'));
-
-        $$('#modal button, #modalTarefas button').forEach(item => item.classList.add('lightBorderModal'));
-        $$('h2').forEach(item => item.classList.add('lightBorderTop'));
-
-        $('#modal').classList.add('lightModaBackground');
-        $('#modalTarefas').classList.add('lightModaBackground');
-        $('#input').style.boxShadow = 'none';
-    } else {
-        $$('span').forEach(contador => contador.classList.remove('lightBorderTop'));
     }
 
 };
@@ -287,3 +227,29 @@ function continuarTempoTarefas() {
     h = +continuarHora;
 }
 
+// Mudar tema e gravar em localStorage:
+$('[data-dark1]').addEventListener('click', () => mudarTema('css/Dark1.css'));
+$('[data-dark2]').addEventListener('click', () => mudarTema('css/Dark2.css'));
+$('[data-dark3]').addEventListener('click', () => mudarTema('css/Dark3.css'));
+$('[data-dark4]').addEventListener('click', () => mudarTema('css/Dark4.css'));
+$('[data-dark5]').addEventListener('click', () => mudarTema('css/Dark5.css'));
+$('[data-light1]').addEventListener('click', () => mudarTema('css/Light1.css'));
+$('[data-light2]').addEventListener('click', () => mudarTema('css/Light2.css'));
+$('[data-light3]').addEventListener('click', () => mudarTema('css/Light3.css'));
+$('[data-light4]').addEventListener('click', () => mudarTema('css/Light4.css'));
+$('[data-light5]').addEventListener('click', () => mudarTema('css/Light5.css'));
+
+function mudarTema(tema) {
+    localStorage.setItem('temaEscolhido', tema);
+
+    $$("link").item(0).setAttribute('href', tema);
+
+    $('[data-tema] span').innerHTML = tema.replace('.css', '').replace('css', '').replace('/', '');
+}
+
+if (localStorage.getItem('temaEscolhido') === null) {
+    $('[data-tema] span').innerHTML = 'Dark1';
+} else {
+    $('[data-tema] span').innerHTML = localStorage.getItem('temaEscolhido').replace('.css', '').replace('css', '').replace('/', '');
+    $$("link").item(0).setAttribute('href', localStorage.getItem('temaEscolhido'));
+}
