@@ -28,11 +28,13 @@ let timer;
 function iniciarTempo() {
     timer = setInterval(cronometro, 1000);
     iniciar.setAttribute('disabled', '');
+    $('div.cronometro').classList.remove('pulsar');
 }
 
 function pausarTempo() {
     clearInterval(timer);
     iniciar.removeAttribute('disabled')
+    $('div.cronometro').classList.toggle('pulsar');
 }
 
 function resetarTempo() {

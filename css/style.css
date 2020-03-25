@@ -338,3 +338,20 @@ footer a span {
     }
 
 }
+
+/* efeito pulsar no cronômetro: */
+@keyframes pulsar {
+    from {
+        opacity: .9;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(.97);
+    }
+}
+
+.pulsar{
+    animation: pulsar 1s alternate infinite;
+}
