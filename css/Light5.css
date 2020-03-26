@@ -64,7 +64,7 @@ span,
 #voltas div,
 #salvarTarefa div div {
     border-top: 1px solid var(--cor-medio);
-    color: var(--cor-medio);
+    color: var(--cor-branco);
 }
 
 #voltas::-webkit-scrollbar-thumb,
@@ -86,7 +86,7 @@ button {
 
 #modal button,
 #modalTarefas button {
-    color: var(--cor-claro);
+    color: #b51630;
     border-color: var(--cor-branco);
     box-shadow: 0 0 0 3px var(--cor-escuro), 0 0 0 5px var(--cor-medio);
 }
@@ -110,7 +110,7 @@ button {
 }
 
 input {
-    border: 2px solid var(--cor-claro);
+    border: 2px solid #b51630;
 }
 
 input::placeholder {

@@ -10,32 +10,29 @@ body {
 }
 
 nav {
-    border-bottom: 1px solid var(--cor-branco);
+    border-bottom: 1px solid var(--cor-medio);
     background: #060606ed;
 }
 
 span,
+footer, [data-tema], #ponto, h3 {
+    color: var(--cor-medio);
+}
+
 .tituloDaTarefa,
-.numeroVolta,
-footer {
-    color: var(--cor-medio);
-}
-
-[data-tema] {
-    color: var(--cor-medio);
-}
-
-#ponto {
-    color: var(--cor-medio);
+.numeroVolta, .contador, .contadorVoltas, [data-tema] span,
+.container,
+footer div a {
+    color: var(--cor-claro);
 }
 
 [data-tema] ul {
     background: var(--cor-escuro);
-    border: 1px solid var(--cor-branco);
+    border: 1px solid var(--cor-medio);
 }
 
 [data-tema] ul li {
-    border-top: 1px solid var(--cor-branco);
+    border-top: 1px solid var(--cor-medio);
     color: var(--cor-claro);
 }
 
@@ -44,20 +41,14 @@ footer {
     color: var(--cor-escuro);
 }
 
-[data-tema] span,
-.container,
-footer div a {
-    color: var(--cor-claro);
-}
-
 .cronometro {
-    border: 1px solid var(--cor-branco);
+    border: 1px solid var(--cor-medio);
     box-shadow: 0 0 0 3px var(--cor-escuro), 0 0 0 7px var(--cor-medio);
 }
 
 #voltas div,
 #salvarTarefa div div {
-    border-top: 1px solid var(--cor-branco);
+    border-top: 1px solid var(--cor-medio);
 }
 
 #voltas::-webkit-scrollbar-thumb,
@@ -72,7 +63,7 @@ footer div a {
 
 button {
     color: var(--cor-claro);
-    border: 1px solid var(--cor-branco);
+    border: 1px solid var(--cor-medio);
     box-shadow: 0 0 0 2px var(--cor-escuro), 0 0 0 4px var(--cor-medio);
 }
 

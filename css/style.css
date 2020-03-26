@@ -22,6 +22,7 @@ body {
 
 h3 {
     letter-spacing: 2px;
+    margin-top: 40px;
 }
 
 nav {
@@ -78,7 +79,7 @@ nav {
 }
 
 [data-tema] ul li:hover {
-font-weight: 600;
+    font-weight: 600;
 }
 
 .botao {
@@ -210,7 +211,8 @@ button:hover {
     margin: 10px 6px;
 }
 
-#modal button, #modalTarefas button {
+#modal button,
+#modalTarefas button {
     font-family: 'Orbitron', Arial, Helvetica, sans-serif;
     letter-spacing: 2px;
     font-weight: 500;
@@ -230,7 +232,7 @@ input::placeholder {
 }
 
 .mostrar {
-    display: flex!important;
+    display: flex !important;
 }
 
 .animarModal {
@@ -288,6 +290,21 @@ footer a span {
     }
 }
 
+/* efeito pulsar no cronômetro: */
+@keyframes pulsar {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(.97);
+    }
+}
+
+.pulsar {
+    animation: pulsar 1s alternate infinite;
+}
+
 @media screen and (max-width: 600px) {
 
     [data-tema] {
@@ -328,6 +345,14 @@ footer a span {
         max-width: 293px;
     }
 
+    #containerModal button,
+    #containerModalTarefas button {
+        padding: 6px 8px;
+        font-size: 12px;
+        margin: 10px 5px 14px 5px;
+        transform: scale(1);
+    }
+
     .numeroVolta {
         line-height: 20px;
     }
@@ -337,19 +362,4 @@ footer a span {
         margin-right: 5px;
     }
 
-}
-
-/* efeito pulsar no cronômetro: */
-@keyframes pulsar {
-    from {
-        transform: scale(1);
-    }
-
-    to {
-        transform: scale(.97);
-    }
-}
-
-.pulsar{
-    animation: pulsar 1s alternate infinite;
 }

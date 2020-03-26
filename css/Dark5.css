@@ -45,13 +45,13 @@ footer div a {
 }
 
 .cronometro {
-    border: 1px solid var(--cor-branco);
+    border: 1px solid var(--cor-medio);
     box-shadow: 0 0 0 3px var(--cor-escuro), 0 0 0 7px var(--cor-medio);
 }
 
 #voltas div,
 #salvarTarefa div div {
-    border-top: 1px solid var(--cor-branco);
+    border-top: 1px solid var(--cor-medio);
 }
 
 #voltas::-webkit-scrollbar-thumb,
@@ -62,7 +62,7 @@ footer div a {
 
 button {
     color: var(--cor-claro);
-    border: 1px solid var(--cor-branco);
+    border: 1px solid var(--cor-medio);
     box-shadow: 0 0 0 2px var(--cor-escuro), 0 0 0 4px var(--cor-medio);
 }
 

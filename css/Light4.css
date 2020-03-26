@@ -27,7 +27,7 @@ h3 {
 span,
 .tituloDaTarefa,
 .numeroVolta {
-    color: var(--cor-claro);
+    color: var(--cor-claro)!important;
 }
 
 #ponto {
@@ -64,8 +64,8 @@ footer div a {
 
 #voltas div,
 #salvarTarefa div div {
-    border-top: 1px solid var(--cor-medio);
-    color: var(--cor-medio);
+    border-top: 1px solid #84a4ff;
+    color: #84a4ff;
 }
 
 #voltas::-webkit-scrollbar-thumb,
@@ -88,8 +88,8 @@ button {
 #modal button,
 #modalTarefas button {
     color: var(--cor-claro);
-    border-color: var(--cor-medio);
-    box-shadow: 0 0 0 3px var(--cor-branco), 0 0 0 5px var(--cor-medio);
+    border-color: #84a4ff;
+    box-shadow: 0 0 0 3px var(--cor-branco), 0 0 0 5px #84a4ff;
 }
 
 #containerModal,
@@ -106,7 +106,7 @@ button {
 #modalTarefas h2,
 #modal h2 {
     color: var(--cor-medio);
-    border: 2px solid #84a4ff;
+    border: 2px solid var(--cor-claro);
     background: var(--cor-branco);
 }
 

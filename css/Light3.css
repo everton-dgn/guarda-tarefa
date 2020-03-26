@@ -28,7 +28,7 @@ h3 {
 span,
 .tituloDaTarefa,
 .numeroVolta {
-    color: var(--cor-claro);
+    color: var(--cor-claro)!important;
 }
 
 [data-tema] ul {
@@ -61,7 +61,7 @@ footer div a {
 
 #voltas div,
 #salvarTarefa div div {
-    border-top: 1px solid var(--cor-claro);
+    border-top: 1px solid var(--cor-medio);
     color: var(--cor-medio);
 }
 
@@ -103,13 +103,13 @@ button {
 
 #modalTarefas h2,
 #modal h2 {
-    color: var(--cor-claro);
-    border: 2px solid var(--cor-medio);
+    color: var(--cor-medio);
+    border: 2px solid var(--cor-claro);
     background: var(--cor-branco);
 }
 
 input {
-    border: 2px solid var(--cor-claro);
+    border: 2px solid var(--cor-medio);
 }
 
 input::placeholder {
