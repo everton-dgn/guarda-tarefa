@@ -134,7 +134,7 @@ export default function main() {
         let filtered_keys = keys.filter(value => value.startsWith("#")).sort();
 
         filtered_keys.forEach((item) => {
-            $('#salvarTarefa').innerHTML += localStorage.getItem(item);
+            salvarTarefa.innerHTML += localStorage.getItem(item);
         });
 
         // contador de tarefas
@@ -197,7 +197,7 @@ export default function main() {
     }
 
     const tarefaSalva = function () {
-        return $('#salvarTarefa').innerHTML = '<div class="tarefa"><div class="tituloDaTarefa">' + nomeDaTarefa.value + '</div>' + '<div class="timerDaTarefa">' + horas.firstChild.data + '<span>h </span>' + minutos.firstChild.data + '<span>m </span>' + segundos.firstChild.data + '<span>s</span>' + '</div></div>';
+        return salvarTarefa.innerHTML = '<div class="tarefa"><div class="tituloDaTarefa">' + nomeDaTarefa.value + '</div>' + '<div class="timerDaTarefa">' + horas.firstChild.data + '<span>h </span>' + minutos.firstChild.data + '<span>m </span>' + segundos.firstChild.data + '<span>s</span>' + '</div></div>';
     }
 
     // botões do modal da lista de tarefas:

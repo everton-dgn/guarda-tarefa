@@ -39,15 +39,20 @@ export default function themes() {
         $('[data-tema] span').innerHTML = 'Dark1';
     } else {
         let estilo = document.createElement("link");
-        estilo.id = 'temadefault';
         estilo.href = localStorage.getItem('temaEscolhido');
         estilo.rel = "stylesheet";
+        estilo.id = 'temadefault';
         document.head.appendChild(estilo);
 
         $('[data-tema] span').innerHTML = localStorage.getItem('temaEscolhido').replace('.css', '').replace('css', '').replace('/', '').replace('themes', '');
         $('#temadefault').setAttribute('href', localStorage.getItem('temaEscolhido'));
     }
 
-
+    // deixa página visível apenas depois de tudo carregado
+    document.onreadystatechange = function () {
+        if (document.readyState === 'complete') {
+            setTimeout(function(){ document.body.style.visibility = "visible" }, 100);
+        }
+    }
 
 }
