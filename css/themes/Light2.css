@@ -1,17 +1,18 @@
 :root {
-    --cor-escuro: #007775;
-    --cor-medio: #fff8dc;
-    --cor-claro: #ff8484;
+    --cor-escuro: #eaf4ff;
+    --cor-medio: #0a1021;
+    --cor-claro: #ff4e38;
     --cor-branco: #fff;
 }
 
-body {
+body,
+.barra::-webkit-scrollbar-thumb {
     background: var(--cor-escuro);
 }
 
 nav {
-    border-bottom: 1px solid #b51630;
-    background: #ffffffe8;
+    border-bottom: 1px solid var(--cor-medio);
+    background: #ffffffe3;
 }
 
 h3 {
@@ -20,97 +21,96 @@ h3 {
 
 [data-tema] {
     font-weight: 500;
-    color: #5f5f5f!important;
+    color: var(--cor-medio)!important;
 }
 
 [data-tema],
+#ponto,
 span,
 .tituloDaTarefa,
 .numeroVolta {
     color: var(--cor-claro);
 }
 
-#ponto {
-    color: #9c9c9c;
-}
-
 [data-tema] ul {
-    background: #b51630;
+    background: var(--cor-branco);
     border: 1px solid var(--cor-medio);
 }
 
 [data-tema] ul li {
     border-top: 1px solid var(--cor-medio);
-    color: var(--cor-branco);
+    color: var(--cor-claro);
     font-weight: 600;
 }
 
 [data-tema] ul li:hover {
     background: var(--cor-medio);
-    color: #b51630;
+    color: var(--cor-escuro);
 }
 
 [data-tema] span,
-.container {
-    color: #b51630;
+.container,
+footer div a {
+    color: var(--cor-claro);
 }
 
 .cronometro {
     background: var(--cor-branco);
-    border: 1px solid var(--cor-branco);
-    box-shadow: 0 0 0 3px var(--cor-escuro), 0 0 0 7px var(--cor-medio);
+    border: 1px solid var(--cor-medio);
+    box-shadow: 0 0 0 3px var(--cor-branco), 0 0 0 7px var(--cor-medio);
 }
 
 #voltas div,
 #salvarTarefa div div {
-    border-top: 1px solid var(--cor-medio);
-    color: var(--cor-branco);
+    border-top: 1px solid var(--cor-claro);
+    color: var(--cor-medio);
 }
 
 #voltas::-webkit-scrollbar-thumb,
 #salvarTarefa::-webkit-scrollbar-thumb {
     background: var(--cor-medio);
+    border: 1px solid var(--cor-medio);    
 }
 
 #voltas::-webkit-scrollbar,
 #salvarTarefa::-webkit-scrollbar {
-    width: 6px !important;
+    width: 6px!important;
 }
 
 button {
     background: var(--cor-branco) !important;
-    color: #b51630;
-    border: 1px solid var(--cor-branco);
-    box-shadow: 0 0 0 2px var(--cor-escuro), 0 0 0 4px var(--cor-medio);
+    color: var(--cor-claro);
+    border: 1px solid var(--cor-medio);
+    box-shadow: 0 0 0 2px var(--cor-branco), 0 0 0 4px var(--cor-medio);
 }
 
 #modal button,
 #modalTarefas button {
-    color: #b51630;
-    border-color: var(--cor-branco);
-    box-shadow: 0 0 0 3px var(--cor-escuro), 0 0 0 5px var(--cor-medio);
+    color: var(--cor-claro);
+    border-color: var(--cor-medio);
+    box-shadow: 0 0 0 3px var(--cor-branco), 0 0 0 5px var(--cor-medio);
 }
 
 #containerModal,
 #containerModalTarefas {
-    background: #1d2027e8;
+    background: #0c1113e8;
 }
 
 #modal,
 #modalTarefas {
     background: var(--cor-escuro);
-    box-shadow: 0 0 0 2px var(--cor-medio);
+    box-shadow: 0 0 0 2px var(--cor-claro);
 }
 
 #modalTarefas h2,
 #modal h2 {
-    color: #5f5f5f;
+    color: var(--cor-medio);
     border: 2px solid var(--cor-claro);
     background: var(--cor-branco);
 }
 
 input {
-    border: 2px solid #b51630;
+    border: 2px solid var(--cor-medio);
 }
 
 input::placeholder {
@@ -118,16 +118,11 @@ input::placeholder {
 }
 
 footer {
-    color: var(--cor-branco);
+    color: var(--cor-medio);
     font-weight: 600;
 }
 
-footer div a {
-    color: var(--cor-medio);
-}
-
 footer a span {
-    background: url('..//images/logolight.svg') no-repeat center center !important;
+    background: url('../../images/logolight.svg') no-repeat center center !important;
     background-size: contain !important;
-    filter: invert(1);
 }

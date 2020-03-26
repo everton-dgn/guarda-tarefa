@@ -305,6 +305,10 @@ footer a span {
     animation: pulsar 1s alternate infinite;
 }
 
+.ocultar {
+    display: none;
+}
+
 @media screen and (max-width: 600px) {
 
     [data-tema] {

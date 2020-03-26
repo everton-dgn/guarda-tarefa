@@ -1,18 +1,17 @@
 :root {
-    --cor-escuro: #010029;
-    --cor-medio: #AB987A;
-    --cor-claro: #f756ff;
-    --cor-branco: #fff;
+    --cor-escuro: #0a1021;
+    --cor-medio: #dab375;
+    --cor-claro: #ff4e38;
+    --cor-branco: #cbc9d0;
 }
 
-body,
-.barra::-webkit-scrollbar-thumb {
+body {
     background: var(--cor-escuro);
 }
 
 nav {
-    border-bottom: 1px solid var(--cor-medio);
-    background: #010029e3;
+    border-bottom: 1px solid var(--cor-branco);
+    background: #0a1021e6;
 }
 
 [data-tema],
@@ -76,7 +75,7 @@ button {
 
 #containerModal,
 #containerModalTarefas {
-    background: #01001be3;
+    background: #030710e6;
 }
 
 #modal,
@@ -101,5 +100,9 @@ input::placeholder {
 }
 
 footer a span {
-    filter: invert(.6);
+    filter: sepia(1);
+}
+
+footer a span {
+    filter: invert(.8);
 }

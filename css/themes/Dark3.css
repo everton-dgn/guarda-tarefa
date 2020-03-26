@@ -1,8 +1,8 @@
 :root {
-    --cor-escuro: #0a1021;
-    --cor-medio: #AB987A;
-    --cor-claro: #ff4e38;
-    --cor-branco: #cbc9d0;
+    --cor-escuro: #000;
+    --cor-medio: #dab375;
+    --cor-claro: #fff;
+    --cor-branco: #ccc;
 }
 
 body {
@@ -10,38 +10,35 @@ body {
 }
 
 nav {
-    border-bottom: 1px solid var(--cor-branco);
-    background: #0a1021e6;
+    border-bottom: 1px solid var(--cor-medio);
+    background: #060606ed;
 }
 
-[data-tema],
-#ponto,
 span,
+footer, [data-tema], #ponto, h3 {
+    color: var(--cor-medio);
+}
+
 .tituloDaTarefa,
-.numeroVolta,
-footer {
-    color: var(--cor-branco);
+.numeroVolta, .contador, .contadorVoltas, [data-tema] span,
+.container,
+footer div a {
+    color: var(--cor-claro);
 }
 
 [data-tema] ul {
     background: var(--cor-escuro);
-    border: 1px solid var(--cor-branco);
+    border: 1px solid var(--cor-medio);
 }
 
 [data-tema] ul li {
-    border-top: 1px solid var(--cor-branco);
+    border-top: 1px solid var(--cor-medio);
     color: var(--cor-claro);
 }
 
 [data-tema] ul li:hover {
     background: var(--cor-claro);
     color: var(--cor-escuro);
-}
-
-[data-tema] span,
-.container,
-footer div a {
-    color: var(--cor-claro);
 }
 
 .cronometro {
@@ -56,8 +53,12 @@ footer div a {
 
 #voltas::-webkit-scrollbar-thumb,
 #salvarTarefa::-webkit-scrollbar-thumb {
-    background: var(--cor-escuro);
-    border: 1px solid var(--cor-medio);
+    background: var(--cor-medio);
+}
+
+#voltas::-webkit-scrollbar,
+#salvarTarefa::-webkit-scrollbar {
+    width: 6px!important;
 }
 
 button {
@@ -68,14 +69,13 @@ button {
 
 #modal button,
 #modalTarefas button {
-    color: var(--cor-branco);
     border-color: var(--cor-medio);
     box-shadow: 0 0 0 3px var(--cor-escuro), 0 0 0 4px var(--cor-claro);
 }
 
 #containerModal,
 #containerModalTarefas {
-    background: #030710e6;
+    background: #060606ed;
 }
 
 #modal,
@@ -86,7 +86,7 @@ button {
 
 #modalTarefas h2,
 #modal h2 {
-    color: var(--cor-branco);
+    color: var(--cor-claro);
     border: 1px solid var(--cor-medio);
 }
 
@@ -100,9 +100,5 @@ input::placeholder {
 }
 
 footer a span {
-    filter: sepia(1);
-}
-
-footer a span {
-    filter: invert(.8);
+    filter: grayscale(1);
 }

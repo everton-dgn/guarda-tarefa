@@ -122,6 +122,6 @@ footer {
 }
 
 footer a span {
-    background: url('..//images/logolight.svg') no-repeat center center !important;
+    background: url('../../images/logolight.svg') no-repeat center center !important;
     background-size: contain !important;
 }
