@@ -10,6 +10,11 @@ export default function themes() {
     const $ = document.querySelector.bind(document);
     const $$ = document.querySelectorAll.bind(document);
 
+    $('[data-tema] span').addEventListener(appEvents.down, dropdown);
+    function dropdown() {
+        $('[data-tema] ul').classList.toggle('ocultar2');
+    }
+
     $('[data-dark1]').addEventListener(appEvents.down, () => mudarTema('css/themes/Dark1.css'));
     $('[data-dark2]').addEventListener(appEvents.down, () => mudarTema('css/themes/Dark2.css'));
     $('[data-dark3]').addEventListener(appEvents.down, () => mudarTema('css/themes/Dark3.css'));
@@ -51,7 +56,7 @@ export default function themes() {
     // deixa página visível apenas depois de tudo carregado
     document.onreadystatechange = function () {
         if (document.readyState === 'complete') {
-            setTimeout(function(){ document.body.style.visibility = "visible" }, 100);
+            setTimeout(function () { document.body.style.visibility = "visible" }, 100);
         }
     }
 

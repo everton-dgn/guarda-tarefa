@@ -35,8 +35,16 @@ nav {
     z-index: 9;
 }
 
+[data-tema] .fa {
+    right: 20px;
+    position: absolute;
+    line-height: 50px;
+}
+
 [data-tema] span {
     font-size: 15px;
+    right: 37px;
+    position: absolute;
 }
 
 [data-tema] {
@@ -47,6 +55,7 @@ nav {
     font-family: 'Orbitron', Arial, Helvetica, sans-serif;
     letter-spacing: 1px;
     margin-right: 20px;
+    min-width: 180px;
 }
 
 [data-tema] ul {
@@ -55,6 +64,7 @@ nav {
     position: absolute;
     border-top: none;
     border-radius: 0 0 3px 3px;
+    right: 20px;
 }
 
 @keyframes menu-tema {
@@ -307,10 +317,22 @@ footer a span {
 }
 
 .ocultar {
-    display: none;
+    display: none!important;
+}
+
+.ocultar2 {
+    display: none!important;
 }
 
 @media screen and (max-width: 600px) {
+
+    .ocultar2 {
+        display: block!important;
+    }
+
+    [data-tema]:hover ul {
+        display: none;
+    }
 
     [data-tema] {
         margin-right: 0;

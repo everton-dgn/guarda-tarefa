@@ -309,6 +309,11 @@ export default function main() {
         $$('div#salvarTarefa div.tarefa.excluirTarefa').forEach((item) => {
             item.classList.remove('excluirTarefa');
         });
+
+        // pausa cronômetro caso precise:
+        clearInterval(timer);
+        iniciar.removeAttribute('disabled')
+        $('div.cronometro').classList.toggle('pulsar');
     }
 
 }
