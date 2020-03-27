@@ -60,4 +60,27 @@ export default function themes() {
         }
     }
 
+    // fecha menu dropdown de temas ao clicar fora dele no mobile:
+    const menu = $('[data-tema] ul');
+    const foraMenu = document.body;
+
+    if (menu && foraMenu) {
+
+        menu.addEventListener(appEvents.down, toggleModal);
+        foraMenu.addEventListener(appEvents.down, clickForaModal);
+
+        // fecha menu:
+        function toggleModal(e) {
+            e.preventDefault()
+            $('[data-tema] ul.ocultar2').classList.toggle('ocultar2');
+        }
+
+        // clique fora do menu:
+        function clickForaModal(e) {
+            if (e.target === this)
+                toggleModal(e);
+        }
+
+    }
+
 }
