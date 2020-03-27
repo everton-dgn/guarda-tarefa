@@ -26,7 +26,7 @@ export default function themes() {
 
         $('#temadefault').setAttribute('href', tema);
 
-        $('[data-tema] span').innerHTML = tema.replace('.css', '').replace('css', '').replace('/', '').replace('themes', '');
+        $('[data-tema] span').innerHTML = tema.replace('.css', '').replace('css', '').replace('/', '').replace('themes/', '');
     }
 
     if (localStorage.getItem('temaEscolhido') === null) {
@@ -44,7 +44,7 @@ export default function themes() {
         estilo.id = 'temadefault';
         document.head.appendChild(estilo);
 
-        $('[data-tema] span').innerHTML = localStorage.getItem('temaEscolhido').replace('.css', '').replace('css', '').replace('/', '').replace('themes', '');
+        $('[data-tema] span').innerHTML = localStorage.getItem('temaEscolhido').replace('.css', '').replace('css', '').replace('/', '').replace('themes/', '');
         $('#temadefault').setAttribute('href', localStorage.getItem('temaEscolhido'));
     }
 

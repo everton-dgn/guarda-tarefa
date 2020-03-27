@@ -69,7 +69,16 @@ export default function main() {
     }
 
     function volta() {
+        // cria registro das voltas no html:
         voltas.innerHTML += "<div class='contarVolta'><span class='numeroVolta'></span>" + horas.firstChild.data + "<span>h </span>" + minutos.firstChild.data + "<span>m </span>" + segundos.firstChild.data + "<span>s</span></div>";
+
+        // adiciona total de voltas no html:
+        $('.contadorVoltas').innerText = $$('.contarVolta').length;
+
+        // adiciona número corresppondente à volta:
+        $$('span.numeroVolta').forEach((item, index) => {
+            item.innerText = index + 1;
+        });
     }
 
     // limpa as voltas com duplo click
@@ -82,6 +91,9 @@ export default function main() {
                 voltas.innerHTML = "";
                 touchtime = 0;
                 localStorage.removeItem('voltas');
+
+                // zera total de voltas no html:
+                $('.contadorVoltas').innerText = 0;
             } else {
                 touchtime = new Date().getTime();
             }
@@ -179,7 +191,7 @@ export default function main() {
         $('#ok').removeAttribute('disabled');
     }
 
-    // grava o nome e tempo da tarefa na div o no localStorage:
+    // grava o nome e tempo da tarefa na div e no localStorage:
     const form = $('form');
     const nomeDaTarefa = $('#input');
 
@@ -194,9 +206,28 @@ export default function main() {
         // no lugar do reload:
         containerModal.classList.toggle('mostrar');
         $('#modal').classList.toggle('animarModal');
+
+        // exibe número total de tarefas no html:
+        let keys = [];
+        for (let i = 0, len = localStorage.length; i < len; ++i) {
+            keys.push(localStorage.key(i));
+        }
+        $('span.contador').innerText = keys.filter(value => value.startsWith("#")).length;
+
+        // exibe a lista de tarefas no html após salvar:
+        // let keys2 = [];
+        // for (let i = 0, len = localStorage.length; i < len; ++i) {
+        //     keys2.push(localStorage.key(i));
+        // }
+        // let filtered_keys2 = keys2.filter(value => value.startsWith("#")).sort();
+
+        // filtered_keys2.forEach((item) => {
+        //     salvarTarefa.innerHTML += localStorage.getItem(item);
+        // });
+
     }
 
-    const tarefaSalva = function () {
+    const tarefaSalva = () => {
         return salvarTarefa.innerHTML = '<div class="tarefa"><div class="tituloDaTarefa">' + nomeDaTarefa.value + '</div>' + '<div class="timerDaTarefa">' + horas.firstChild.data + '<span>h </span>' + minutos.firstChild.data + '<span>m </span>' + segundos.firstChild.data + '<span>s</span>' + '</div></div>';
     }
 
@@ -225,6 +256,9 @@ export default function main() {
         $$('div.tarefa.excluirTarefa div.tituloDaTarefa').forEach((item) => {
             localStorage.removeItem("#" + item.innerText);
         });
+
+        // exibe número de tarefas total no html após exclusão:
+        $('span.contador').innerText = $$('div.tarefa').length - $$('div.tarefa.excluirTarefa.ocultar').length;
     }
 
     // continuar
