@@ -61,24 +61,25 @@ export default function themes() {
     }
 
     // fecha menu dropdown de temas ao clicar fora dele no mobile:
-    const menu = $('[data-tema] ul');
-    const foraMenu = document.body;
+    const foraMenu = $('div.container');
+    const body = $('body');
+    const nav = $('nav');
 
-    if (menu && foraMenu) {
+    if ($('[data-tema]') && foraMenu && body) {
 
-        menu.addEventListener(appEvents.down, toggleModal);
         foraMenu.addEventListener(appEvents.down, clickForaModal);
+        body.addEventListener(appEvents.down, clickForaModal);
+        nav.addEventListener(appEvents.down, clickForaModal);
 
         // fecha menu:
-        function toggleModal(e) {
-            e.preventDefault()
-            $('[data-tema] ul.ocultar2').classList.toggle('ocultar2');
+        function toggleModal() {
+            $('[data-tema] ul').classList.remove('ocultar2');
         }
 
         // clique fora do menu:
         function clickForaModal(e) {
             if (e.target === this)
-                toggleModal(e);
+                toggleModal();
         }
 
     }

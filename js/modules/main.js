@@ -64,9 +64,7 @@ export default function main() {
         h < 10 ? $("#horas").innerHTML = "0" + h : $("#horas").innerHTML = h;
         s < 10 ? $("#segundos").innerHTML = "0" + s : $("#segundos").innerHTML = s;
         m < 10 ? $("#minutos").innerHTML = "0" + m : $("#minutos").innerHTML = m;
-        if (h == 99)
-            pausarTempo();
-                
+        if (h == 99) pausarTempo();                
     }
 
     function volta() {
@@ -77,9 +75,7 @@ export default function main() {
         $('.contadorVoltas').innerText = $$('.contarVolta').length;
 
         // adiciona número corresppondente à volta:
-        $$('span.numeroVolta').forEach((item, index) => {
-            item.innerText = index + 1;
-        });
+        $$('span.numeroVolta').forEach((item, index) => item.innerText = index + 1);
     }
 
     // limpa as voltas com duplo click
@@ -162,14 +158,10 @@ export default function main() {
         }
 
         // abre modal com opções para tarefas registradas:
-        $$('#salvarTarefa > div').forEach((item) => {
-            item.addEventListener(appEvents.down, modalTarefas);
-        });
+        $$('#salvarTarefa > div').forEach(item => item.addEventListener(appEvents.down, modalTarefas));
 
         function modalTarefas() {
-            $$('.tarefa').forEach(() => {
-                this.classList.add('excluirTarefa');
-            });
+            $$('.tarefa').forEach(() => this.classList.add('excluirTarefa'));
 
             $('#containerModalTarefas').classList.add('mostrar');
             $('#modalTarefas').classList.add('animarModal');
@@ -234,14 +226,10 @@ export default function main() {
         });
 
         // abre modal com opções para tarefas registradas:
-        $$('#salvarTarefa > div').forEach((item) => {
-            item.addEventListener(appEvents.down, modalTarefas);
-        });
+        $$('#salvarTarefa > div').forEach(item => item.addEventListener(appEvents.down, modalTarefas));
 
         function modalTarefas() {
-            $$('.tarefa').forEach(() => {
-                this.classList.add('excluirTarefa');
-            });
+            $$('.tarefa').forEach(() => this.classList.add('excluirTarefa'));
 
             $('#containerModalTarefas').classList.add('mostrar');
             $('#modalTarefas').classList.add('animarModal');
@@ -263,25 +251,19 @@ export default function main() {
         $('#modalTarefas').classList.toggle('animarModal');
 
         // limpa a classe .excluirTarefa pra evitar conflitos:
-        $$('div#salvarTarefa div.tarefa.excluirTarefa').forEach((item) => {
-            item.classList.remove('excluirTarefa');
-        });
+        $$('div#salvarTarefa div.tarefa.excluirTarefa').forEach(item => item.classList.remove('excluirTarefa'));
     }
 
     // apagar
     $('#apagarTarefa').addEventListener(appEvents.down, apagarModalTarefas);
 
     function apagarModalTarefas() {
-        $$('div.tarefa.excluirTarefa').forEach((item) => {
-            item.classList.add('ocultar');
-        });
+        $$('div.tarefa.excluirTarefa').forEach(item => item.classList.add('ocultar'));
 
         containerModalTarefas.classList.toggle('mostrar');
         $('#modalTarefas').classList.toggle('animarModal');
 
-        $$('div.tarefa.excluirTarefa div.tituloDaTarefa').forEach((item) => {
-            localStorage.removeItem("#" + item.innerText);
-        });
+        $$('div.tarefa.excluirTarefa div.tituloDaTarefa').forEach(item => localStorage.removeItem("#" + item.innerText));
 
         // exibe número de tarefas total no html após exclusão:
         $('span.contador').innerText = $$('div.tarefa').length - $$('div.tarefa.excluirTarefa.ocultar').length;
@@ -307,9 +289,7 @@ export default function main() {
         h = +continuarHora;
 
         // limpa a classe .excluirTarefa pra evitar conflitos:
-        $$('div#salvarTarefa div.tarefa.excluirTarefa').forEach((item) => {
-            item.classList.remove('excluirTarefa');
-        });
+        $$('div#salvarTarefa div.tarefa.excluirTarefa').forEach(item => item.classList.remove('excluirTarefa'));
 
         // pausa cronômetro caso precise:
         clearInterval(timer);
