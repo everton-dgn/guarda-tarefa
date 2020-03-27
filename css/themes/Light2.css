@@ -28,7 +28,9 @@ h3 {
 #ponto,
 span,
 .tituloDaTarefa,
-.numeroVolta {
+.numeroVolta, [data-tema] span,
+.container,
+footer div a {
     color: var(--cor-claro);
 }
 
@@ -46,12 +48,6 @@ span,
 [data-tema] ul li:hover {
     background: var(--cor-medio);
     color: var(--cor-escuro);
-}
-
-[data-tema] span,
-.container,
-footer div a {
-    color: var(--cor-claro);
 }
 
 .cronometro {

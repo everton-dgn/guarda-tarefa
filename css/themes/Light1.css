@@ -23,7 +23,7 @@ nav {
 #ponto,
 span,
 .tituloDaTarefa,
-.numeroVolta {
+.numeroVolta, footer div a {
     color: var(--cor-medio);
 }
 
@@ -113,10 +113,6 @@ input::placeholder {
 footer {
     color: var(--cor-claro);
     font-weight: 600;
-}
-
-footer div a {
-    color: var(--cor-medio);
 }
 
 footer a span {
