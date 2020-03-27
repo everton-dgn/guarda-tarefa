@@ -192,6 +192,10 @@ export default function main() {
     }
 
     // grava o nome e tempo da tarefa na div e no localStorage:
+    const tarefaSalva = () => {
+        return salvarTarefa.innerHTML = '<div class="tarefa"><div class="tituloDaTarefa">' + nomeDaTarefa.value + '</div>' + '<div class="timerDaTarefa">' + horas.firstChild.data + '<span>h </span>' + minutos.firstChild.data + '<span>m </span>' + segundos.firstChild.data + '<span>s</span>' + '</div></div>';
+    }
+
     const form = $('form');
     const nomeDaTarefa = $('#input');
 
@@ -215,20 +219,35 @@ export default function main() {
         $('span.contador').innerText = keys.filter(value => value.startsWith("#")).length;
 
         // exibe a lista de tarefas no html após salvar:
-        // let keys2 = [];
-        // for (let i = 0, len = localStorage.length; i < len; ++i) {
-        //     keys2.push(localStorage.key(i));
-        // }
-        // let filtered_keys2 = keys2.filter(value => value.startsWith("#")).sort();
+        salvarTarefa.innerHTML = '';
 
-        // filtered_keys2.forEach((item) => {
-        //     salvarTarefa.innerHTML += localStorage.getItem(item);
-        // });
+        let keys2 = [];
+        for (let i = 0, len = localStorage.length; i < len; ++i) {
+            keys2.push(localStorage.key(i));
+        }
+        let filtered_keys2 = keys2.filter(value => value.startsWith("#")).sort();
 
-    }
+        filtered_keys2.forEach((item) => {
+            salvarTarefa.innerHTML += localStorage.getItem(item);
+        });
 
-    const tarefaSalva = () => {
-        return salvarTarefa.innerHTML = '<div class="tarefa"><div class="tituloDaTarefa">' + nomeDaTarefa.value + '</div>' + '<div class="timerDaTarefa">' + horas.firstChild.data + '<span>h </span>' + minutos.firstChild.data + '<span>m </span>' + segundos.firstChild.data + '<span>s</span>' + '</div></div>';
+        // abre modal com opções para tarefas registradas:
+        $$('#salvarTarefa > div').forEach((item) => {
+            item.addEventListener(appEvents.down, modalTarefas);
+        });
+
+        function modalTarefas() {
+            $$('.tarefa').forEach(() => {
+                this.classList.add('excluirTarefa');
+            });
+
+            $('#containerModalTarefas').classList.add('mostrar');
+            $('#modalTarefas').classList.add('animarModal');
+        }
+
+        // continuar
+        // corrigir bug primeiro
+
     }
 
     // botões do modal da lista de tarefas:
@@ -240,6 +259,11 @@ export default function main() {
     function cancelarModalTarefas() {
         containerModalTarefas.classList.toggle('mostrar');
         $('#modalTarefas').classList.toggle('animarModal');
+
+        // limpa a classe .excluirTarefa pra evitar conflitos:
+        $$('div#salvarTarefa div.tarefa.excluirTarefa').forEach((item) => {
+            item.classList.remove('excluirTarefa');
+        });
     }
 
     // apagar
@@ -279,6 +303,11 @@ export default function main() {
         s = +continuarSegundo;
         m = +continuarMinuto;
         h = +continuarHora;
+
+        // limpa a classe .excluirTarefa pra evitar conflitos:
+        $$('div#salvarTarefa div.tarefa.excluirTarefa').forEach((item) => {
+            item.classList.remove('excluirTarefa');
+        });
     }
 
 }
