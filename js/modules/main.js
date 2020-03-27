@@ -54,6 +54,7 @@ export default function main() {
     }
 
     function cronometro() {
+        s++;
         if (s == 60) {
             m++; s = 0;
         }
@@ -65,7 +66,7 @@ export default function main() {
         m < 10 ? $("#minutos").innerHTML = "0" + m : $("#minutos").innerHTML = m;
         if (h == 99)
             pausarTempo();
-        s++;
+                
     }
 
     function volta() {
