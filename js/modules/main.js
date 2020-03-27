@@ -172,8 +172,10 @@ export default function main() {
 
             $('#containerModalTarefas').classList.add('mostrar');
             $('#modalTarefas').classList.add('animarModal');
-        }
 
+            // insere nome da tarefa no seu modal de opções:
+            $('[data-nome-tarefa]').innerHTML = $('div.tarefa.excluirTarefa div.tituloDaTarefa').innerText;
+        }
     };
 
     // abre modal para salvar o nome da tarefa e cancela:
@@ -191,7 +193,7 @@ export default function main() {
         $('#ok').removeAttribute('disabled');
     }
 
-    // grava o nome e tempo da tarefa na div e no localStorage:
+    // Botão de guardar tarefa: grava o nome e tempo da tarefa no html e no localStorage:
     const tarefaSalva = () => {
         return salvarTarefa.innerHTML = '<div class="tarefa"><div class="tituloDaTarefa">' + nomeDaTarefa.value + '</div>' + '<div class="timerDaTarefa">' + horas.firstChild.data + '<span>h </span>' + minutos.firstChild.data + '<span>m </span>' + segundos.firstChild.data + '<span>s</span>' + '</div></div>';
     }
@@ -205,7 +207,6 @@ export default function main() {
         e.preventDefault();
         localStorage.setItem('#' + nomeDaTarefa.value, tarefaSalva());
         $('#ok').setAttribute('disabled', '');
-        // location.reload();
 
         // no lugar do reload:
         containerModal.classList.toggle('mostrar');
@@ -243,10 +244,10 @@ export default function main() {
 
             $('#containerModalTarefas').classList.add('mostrar');
             $('#modalTarefas').classList.add('animarModal');
-        }
 
-        // continuar
-        // corrigir bug primeiro
+            // insere nome da tarefa no seu modal de opções:
+            $('[data-nome-tarefa]').innerHTML = $('div.tarefa.excluirTarefa div.tituloDaTarefa').innerText;
+        }
 
     }
 
