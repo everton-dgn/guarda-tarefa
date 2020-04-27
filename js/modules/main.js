@@ -41,7 +41,7 @@ export default function main() {
 
     function pausarTempo() {
         clearInterval(timer);
-        iniciar.removeAttribute('disabled')
+        iniciar.removeAttribute('disabled');
         $('div.cronometro').classList.toggle('pulsar');
     }
 
