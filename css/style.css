@@ -87,6 +87,7 @@ nav {
     line-height: 2.3;
     font-size: 14px;
     padding: 0 36px;
+    cursor: pointer;
 }
 
 [data-tema] ul li:hover {
