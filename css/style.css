@@ -26,6 +26,17 @@ h3 {
     margin-top: 40px;
 }
 
+#installApp {
+    padding: 6px 15px;
+    height: max-content;
+    margin-left: 40px;
+    display: none;
+}
+
+#installApp:hover {
+    transform: scale(1.1);
+}
+
 nav {
     display: flex;
     height: 52px;
@@ -33,6 +44,7 @@ nav {
     position: fixed;
     top: 0;
     z-index: 9;
+    align-items: center;
 }
 
 [data-tema] .fa {
@@ -326,6 +338,10 @@ footer a span {
 }
 
 @media screen and (max-width: 600px) {
+
+    #installApp {
+        margin-left: 20px;
+    }
 
     .ocultar2 {
         display: block!important;

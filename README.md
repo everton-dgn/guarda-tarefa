@@ -10,6 +10,8 @@
 
 - [x] Pode continuar a marcar o tempo de uma tarefa salva.
 
+- [x] Instalável, funcionando como PWA.
+
 - [x] Salva todas as ações, o tema selecionado, o tempo, as tarefas e as voltas registradas em localStorage, podendo assim, atualizar a página ou fechar o navegador que os dados continuam registrados até serem apagados manualmente.
 
 - [x] Contém 10 temas, sendo 5 dark e 5 light.
@@ -20,11 +22,13 @@
 
 - [x] As tarefas são organizadas automaticamente em ordem alfabética.
 
-- [x] Foi desenvolvido para compatibilidade máxima com o navegador Google Chrome, podendo funcionar ou não em outros navegadores.
-
 - [x] Possui responsividade em praticamente qualquer rersolução de tela, desktop ou mobile.
 
 ## Instruções:
+
+<b>0 - Instalar WebApp:</b>
+
+Pressionar botão "Instalar App" e confirmar instalação.
 
 <b>1 - Zerar o cronômetro:</b>
 
