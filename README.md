@@ -1,3 +1,5 @@
+<a href="./LICENSE">![GitHub](https://img.shields.io/github/license/querocriarsite/guarda-tarefa?style=plastic)</a>
+
 # Cronômetro e Guarda Tarefas
 
 ### Feito com javascript, html e css para fins de estudo.
