@@ -3,7 +3,6 @@
 const CACHE_NAME = 'webapp_tarefa_cache'
 const CACHING_DURATION = 15 * 600
 // const BLACK_LIST = /(google|gstatic)/
-
 const STATIC_FILES = [
   './',
   './index.html',
