@@ -387,9 +387,10 @@ if ($('[data-tema]') && foraMenu && body) {
 // CONFIGURAÇÕES PWA //
 // sw.js //
 if ('serviceWorker' in navigator) {
+  console.log('[SW] Registrando ...')
   navigator.serviceWorker.register('./sw.js')
     .then(() => {
-      console.log('[SW] registrado!');
+      console.log('[SW] Registrado!');
     })
     .catch(error => {
       console.log('[SW-ERROR] não registrado!', error);
