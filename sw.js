@@ -1,65 +1,95 @@
 // “powered by ecomplato carros”
-
-const CACHE_NAME = 'webapp_tarefa_cache'
-const CACHING_DURATION = 15 * 600
-// const BLACK_LIST = /(google|gstatic)/
+const BASE_URL = 'http://localhost/guarda-tarefa'; //TODO : Mudar a BASE_URL
+const CACHE_NAME = 'guardatarefas_v0';
 const STATIC_FILES = [
-  './',
-  './index.html',
-  './script.js',
-  './css/style.css',
-  './css/themes/Dark1.css',
+  `${BASE_URL}/`,
+  `${BASE_URL}/index.html`,
+  `${BASE_URL}/script.js`,
+  `${BASE_URL}/css/style.css`,
+  `${BASE_URL}/css/themes/Dark1.css`,
+  `${BASE_URL}/css/themes/Dark2.css`,
+  `${BASE_URL}/css/themes/Dark3.css`,
+  `${BASE_URL}/css/themes/Dark4.css`,
+  `${BASE_URL}/css/themes/Dark5.css`,
+  `${BASE_URL}/css/themes/Light1.css`,
+  `${BASE_URL}/css/themes/Light2.css`,
+  `${BASE_URL}/css/themes/Light3.css`,
+  `${BASE_URL}/css/themes/Light4.css`,
+  `${BASE_URL}/css/themes/Light5.css`,
+  `${BASE_URL}/images/og/logo.jpg`,
   'https://fonts.googleapis.com/css?family=Orbitron:400,500,600,700,800,900&display=swap'
 ];
 
 self.addEventListener('install', event => {
-  console.log('[SW] Instalando...');
+  console.log('[SW] Instalando...',event);
 
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then( cache => {
         console.log('[SW] Pré-cacheando arquivos estáticos');
-        cache.addAll(STATIC_FILES);
+        return cache.addAll(STATIC_FILES)
+          .then( result => {
+            console.log('Cache OK', result)
+          })
+          .catch( erro => {
+            console.log('Não cacheou', erro)
+          });
       })
   );
 });
 
-self.addEventListener('fetch', event => {
-  const { request } = event
-  // if (request.url.match(BLACK_LIST) || request.method === "POST") {
-  //   console.log('Voltou...', event.request.url);
-  //   return
-  // }
-  event.respondWith(
-    caches.open(CACHE_NAME).then(cache => {
-      return cache.match(request).then(response => {
-        if (response && response.status >= 200 && response.status <= 299) {
-          const expirationDate = Date.parse(response.headers.get('sw-cache-expires'))
-          const now = new Date()
-          if (expirationDate > now) {
-            return response
-          }
-        }
-        return fetch(request.url, { cache: 'no-cache' }).then(liveResponse => {
-          const expires = new Date()
-          expires.setSeconds(expires.getSeconds() + CACHING_DURATION)
-          const cachedResponseFields = {
-            status: liveResponse.status,
-            statusText: liveResponse.statusText,
-            headers: {
-              'sw-cache-expires': expires.toUTCString()
-            },
-          }
-          liveResponse.headers.forEach((header, headerName) => {
-            cachedResponseFields.headers[headerName] = header
-          })
-          const returnedResponse = liveResponse.clone()
-          return liveResponse.blob().then(body => {
-            cache.put(request, new Response(body, cachedResponseFields))
-            return returnedResponse
-          })
-        })
+self.addEventListener('active', event => {
+  console.log('[SW] Ativando ...', event);
+
+  event.waitUntil(
+    caches.keys()
+      .then( keyList => {
+        return Promise.all(keyList.map( key => {
+          //Checando se o nome do cache é diferente do nome da versão atual
+          if(key !== CACHE_NAME){ 
+            console.log('[SW] Removando cache antigo', key);
+            caches.delete(key);
+          } 
+        }));
       })
-    })
-  )
+  );
+
+  //Aplica as atividades executadas pelo SW no primeiro carregamento da página
+  return self.clients.claim();
+}); 
+
+self.addEventListener('fetch', event => {
+  
+  let { request } = event;
+
+  if(STATIC_FILES.includes(request.url)){
+    console.log('Fetching do pre-caching',request.url);
+    event.respondWith(  
+      caches.match(request)
+    );
+  }
+  else {
+    console.log('Fetching do dynamic-caching', request.url);
+    event.respondWith(
+      caches.match(request)
+      .then( response => {
+        if(response)
+          return response;
+        else {
+          return fetch(request)
+            .then( res => {
+              return caches.open(CACHE_NAME)
+                .then( cache => {
+                  cache.put(request.url, res.clone());
+                  return res;
+                });
+            })
+            .catch( error =>{
+              console.log('[SW] Cache não resolveu');
+            });
+        }
+      })
+    )
+  }
+  
 })
