@@ -1,6 +1,8 @@
-<a href="./LICENSE">![GitHub](https://img.shields.io/github/license/querocriarsite/guarda-tarefa?style=plastic)</a>
+<a href="./LICENSE">![GitHub](https://img.shields.io/github/license/everton-dgn/guarda-tarefa?style=plastic)</a> 
+![GitHub repo size](https://img.shields.io/github/repo-size/everton-dgn/guarda-tarefa?style=plastic) 
+![GitHub Repo stars](https://img.shields.io/github/stars/everton-dgn/guarda-tarefa?color=yellow&style=plastic)
 
-# Cronômetro e Guarda Tarefas
+<h1 align="center">CRONÔMETRO GUARDA TAREFAS</h1>
 
 ### Feito com javascript, html e css para fins de estudo.
 
